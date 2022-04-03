@@ -6,6 +6,8 @@ authors = ["Michał Rokita <mrokita@mrokita.pl>"]
 
 [tool.poetry.dependencies]
 python = "^3.10"
+fastapi = "^0.75.1"
+uvicorn = "^0.17.6"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"
