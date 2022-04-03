@@ -17,6 +17,7 @@ COPY --from=poetry-dump requirements.txt ./
 RUN pip install --no-cache-dir -r requirements.txt
 COPY ./ /app/
 EXPOSE 80
+VOLUME /sqlitedata/
 CMD uvicorn przecinak.api:app --host 0.0.0.0 --port 80
 
 
