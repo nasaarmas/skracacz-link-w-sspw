@@ -5,6 +5,8 @@ and a Table definition generation with comment support
 from tortoise import Tortoise, fields, run_async
 from tortoise.models import Model
 
+from przecinak.settings import DB_URL
+
 
 class Przecinak(Model):
     id = fields.IntField(pk=True)
@@ -29,7 +31,7 @@ class Event(Model):
 
 
 async def run():
-    await Tortoise.init(db_url="sqlite://sqlitedata/db.sqlite", modules={"models": ["__main__"]})
+    await Tortoise.init(db_url=DB_URL, modules={"models": ["__main__"]})
     await Tortoise.generate_schemas()
 
     event = await Event.create(name="Test")
